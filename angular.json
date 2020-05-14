@@ -69,6 +69,14 @@
                   "maximumError": "10kb"
                 }
               ]
+            },
+            "qa": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.qa.ts"
+                }
+              ]
             }
           }
         },
@@ -80,6 +88,9 @@
           "configurations": {
             "production": {
               "browserTarget": "mdb-angular-free:build:production"
+            },
+            "qa": {
+              "browserTarget": "mdb-angular-free:build:qa"
             }
           }
         },
