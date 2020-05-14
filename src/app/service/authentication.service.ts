@@ -16,6 +16,7 @@ export class AuthenticationService {
 
   login(login: loginTO) {
     try {
+      alert(environment.serverUrl);
       const url = environment.serverUrl + 'api/login';
       return this.httpClient.post<any>(url, {
         email: login.email,
