@@ -5,8 +5,8 @@
 export const environment = {
   production: false,
   baseUrl: 'http://localhost:4200/',
-  // serverUrl: 'http://localhost:8082/'
-    serverUrl: 'https://api-parkme.herokuapp.com/'
+  serverUrl: 'http://localhost:8082/'
+    // serverUrl: 'https://api-parkme.herokuapp.com/'
 };
 
 /*
