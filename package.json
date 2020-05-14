@@ -34,13 +34,12 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
     "typescript": "~3.7.5",
-    "@types/jasmine": "~3.3.8",
-    "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.11.1"
-
   },
   "devDependencies": {
     "codelyzer": "^5.1.2",
+    "@types/jasmine": "~3.3.8",
+    "@types/jasminewd2": "~2.0.3",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.1.0",
