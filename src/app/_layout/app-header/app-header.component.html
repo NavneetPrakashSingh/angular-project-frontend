@@ -1,0 +1,45 @@
+<!--Navbar-->
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark teal fixed-top">
+
+  <!-- Navbar brand -->
+  <mdb-navbar-brand><a class="navbar-brand" href="#">Navbar</a></mdb-navbar-brand>
+
+  <!-- Collapsible content -->
+  <links>
+
+    <!-- Links -->
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link waves-light" mdbWavesEffect routerLink="/home">Home<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link waves-light" mdbWavesEffect routerLink="/timeline">Create Timeline</a>
+      </li>
+      <li>
+        <form class="form-inline waves-light" mdbWavesEffect>
+          <div class="md-form my-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search">
+          </div>
+        </form>
+      </li>
+      <!-- Dropdown -->
+    </ul>
+    <!-- Links -->
+
+    <!-- Search form -->
+
+    <ul class="navbar-nav">
+      <li class="nav-item dropdown" dropdown>
+        <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+          {{mainText}} <span class="caret"></span></a>
+        <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+          <a class="dropdown-item waves-light" mdbWavesEffect routerLink={{loginUrl}}>{{loginText}}</a>
+          <a *ngIf="showRegister" class="dropdown-item waves-light" mdbWavesEffect routerLink={{registerUrl}}>{{registerText}}</a>
+        </div>
+      </li>
+    </ul>
+  </links>
+  <!-- Collapsible content -->
+
+</mdb-navbar>
+<!--/.Navbar-->
