@@ -1,13 +1,95 @@
 <div class="container " style="margin-top: 6%">
   <h1>{{mainHeading}}</h1>
   <!--  add breadcrums as well-->
-  <h4>{{step1}}</h4>
+  <h4 class="text-center">{{step1}}</h4>
 
   <!--  code can be extracted to another component-->
   <div class="row">
-    <div class="col-6">First Half</div>
-    <div class="col-6">Second half</div>
+    <div class="col-6">
+      <div class=" p-5" action="#!">
+        <input type="text" class="form-control mb-4" [(ngModel)]="heading" placeholder="Enter Heading">
+        <input type="email" class="form-control mb-4" [(ngModel)]="body" placeholder="Enter Message">
+        <div class="row">
+          <div class="col-6">
+            <label class="text-left">Select heading color</label>
+            <div class="custom-heading-color custom-radio mb-4">
+              <div *ngFor="let color of colors | keyvalue">
+                <input type="radio" class="custom-control-input" id="{{color.key}}" name="defaultExampleRadios"
+                       (change)="onHeadingSelectionChange(color.value)">
+                <label class="custom-control-label" for="{{color.key}}">{{color.key}}</label>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <label class="text-left">Select heading text-color</label>
+            <div class="custom-heading-text-color custom-radio mb-4">
+              <div *ngFor="let textColor of textColors | keyvalue">
+                <input type="radio" class="custom-control-input" id="{{textColor.key}}" name="custom-heading-text-color"
+                       (change)="onHeadingTextColorChange(textColor.value)">
+                <label class="custom-control-label" for="{{textColor.key}}">{{textColor.key}}</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-6">
+            <label class="text-left">Select body color</label>
+            <div class="custom-body-color custom-radio mb-4">
+              <div *ngFor="let color of colors | keyvalue">
+                <input type="radio" class="custom-control-input" id="{{color.value}}" name="custom-body-color"
+                       (change)="onBodySelectionChange(color.value)">
+                <label class="custom-control-label" for="{{color.value}}">{{color.key}}</label>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <label class="text-left">Select body text-color</label>
+            <div class="custom-body-text-color custom-radio mb-4">
+              <div *ngFor="let textColor of textColors | keyvalue">
+                <input type="radio" class="custom-control-input" id="{{textColor.value}}" name="custom-body-text-color"
+                       (change)="onBodyTextColorChange(textColor.value)">
+                <label class="custom-control-label" for="{{textColor.value}}">{{textColor.key}}</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <label for="time"> Once the user lands on your website, after what time do you want to show the
+            notification</label>
+          <input type="text" class="form-control mb-4" id="time" [(ngModel)]="timeSlot"
+                 placeholder="Enter time in minutes">
+        </div>
+        <div class="row">
+          <label for="time-interval"> For how long do you want to show the notification to the user</label>
+          <input type="text" class="form-control mb-4" id="time-interval" [(ngModel)]="timeInterval"
+                 placeholder="Enter time interval in minutes">
+        </div>
+      </div>
+    </div>
+
+    <div class="col-6">
+      <div role="alert" aria-live="assertive" aria-atomic="true" class="toast show m-5" data-autohide="false">
+        <div class="toast-header" id="timeline-toast-Header">
+          <strong class="mr-auto">{{(heading != null) ? heading : "Heading"}}</strong>
+          <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="toast-body" id="timeline-toast-Body">
+          {{(body != null) ? body : "Message is shown here"}}
+        </div>
+      </div>
+    </div>
   </div>
-  <!--  code extraction ends here-->
-  <h4>{{step2}}</h4>
+
+  <hr class="mb-5">
+  <div class="text-center">
+    <h4 class="">{{step2}}</h4>
+    <div>Once you click on generate tags, you will be give a script tag which you need to add to your website.</div>
+    <button type="button" class="btn m-4" style="background-color: teal;color: white;" (click)="generateTags()">Generate
+      Tags
+    </button>
+  </div>
+  <hr class="mb-5">
 </div>
