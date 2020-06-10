@@ -1,17 +1,28 @@
 <!-- Default form login -->
 <div class="row  d-flex justify-content-center m-5">
   <div class="col-md-6">
-    <form class="text-center border border-light p-5">
+    <form [formGroup]="user" class=" border border-light p-5">
 
       <p class="h4 mb-4">Sign in</p>
 
       <!-- Email -->
-      <input type="email" [(ngModel)]="email" name="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail">
+      <input type="email" name="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail"
+             formControlName="emailField"
+             [class.is-invalid]="user.get('emailField').invalid && user.get('emailField').touched">
+      <div *ngIf="(primEmail.invalid && primEmail.touched) || primEmail.dirty" class="error-margin">
+        <small *ngIf="primEmail.errors?.required" class="text-danger">Primary email is required</small>
+        <!--question mark(?) is a safe navigation operator-->
+        <small *ngIf="primEmail.errors?.pattern" class="text-danger">Please provide a valid email address</small>
+      </div>
+
 
       <!-- Password -->
-      <input type="password" [(ngModel)]="password" name="email" id="defaultLoginFormPassword" class="form-control mb-4"
-             placeholder="Password">
-
+      <input type="password" name="email" id="defaultLoginFormPassword" class="form-control mb-4"
+             formControlName="passField"
+             placeholder="Password" [class.is-invalid]="user.get('passField').invalid && user.get('passField').touched">
+      <div *ngIf="(passwordValue.invalid && passwordValue.touched) " class="error-margin">
+        <small *ngIf="passwordValue.errors?.required" class="text-danger">Password is required</small>
+      </div>
       <div class="d-flex justify-content-around">
         <div>
           <!-- Remember me -->
