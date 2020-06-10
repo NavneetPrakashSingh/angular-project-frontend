@@ -35,7 +35,9 @@ jobs:
     - name: Install Dependencies
       run: npm install
     - name: Update Ubuntu For Chrome Headless
-      run: sudo apt-get update sudo apt-get install -y libgbm-dev
+      run: sudo apt-get update
+    - name: Update Ubuntu libraries for Chrome Headless
+      run: sudo apt-get install -y libgbm-dev
     - name: Build
       run: npm run test:ci
 
