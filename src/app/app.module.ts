@@ -5,7 +5,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AppComponent} from './app.component';
 
 import {MDBBootstrapModule} from 'angular-bootstrap-md';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {LoginComponent} from './login/login.component';
 import {RegisterComponent} from './register/register.component';
 import {HomeComponent} from './home/home.component';
@@ -37,7 +37,8 @@ import { TimelineComponent } from './timeline/timeline.component';
     MDBBootstrapModule.forRoot(),
     FormsModule,
     appRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
