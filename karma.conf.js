@@ -28,7 +28,7 @@ module.exports = function (config) {
     singleRun: false,
     restartOnFileChange: true,
     // browsers: ['Chrome'],
-    browsers: ['PhantomJS', 'ChromeHeadless'],
+    browsers: ['ChromeHeadless'],
     browserDisconnectTimeout: 10000,
     browserDisconnectTolerance: 3,
     browserNoActivityTimeout: 60000,
